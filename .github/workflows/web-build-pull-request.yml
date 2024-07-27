@@ -1,0 +1,13 @@
+name: web - build pull request
+
+on:
+  pull_request:
+    branches: ["*"]
+  merge_group:
+
+jobs:
+  build:
+    uses: ./.github/workflows/web-build.yml
+    with:
+      environment: dev
+    secrets: inherit
